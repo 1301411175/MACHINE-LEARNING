@@ -29,8 +29,8 @@ The way we do this is by taking the derivative (the tangential line to a functio
 At each iteration j, one should simultaneously update the parameters $\theta_1, \theta_2,...,\theta_n$
  . Updating a specific parameter prior to calculating another one on the $j^{(th)}$
 iteration would yield to a wrong implementation.  
-在每次迭代j中，我们应该同时更新的参数$\theta_1, \theta_2,...,\theta_n$。在$j^{(th)}$上计算另一个参数之前迭代更新一个另一个参数会导致于错误。
-![image](https://d3c33hcgiwev3.cloudfront.net/imageAssetProxy.v1/yr-D1aDMEeai9RKvXdDYag_627e5ab52d5ff941c0fcc741c2b162a0_Screenshot-2016-11-02-00.19.56.png?expiry=1613001600000&hmac=Ifp8vvctTw2IK7sBX8x1gkexWALIx53MaoRfrvlJRxQ)
+在每次迭代j中，我们应该同时更新的参数$\theta_1, \theta_2,...,\theta_n$。在$j^{(th)}$上计算另一个参数之前迭代更新一个另一个参数会导致于错误。  
+![image](https://d3c33hcgiwev3.cloudfront.net/imageAssetProxy.v1/yr-D1aDMEeai9RKvXdDYag_627e5ab52d5ff941c0fcc741c2b162a0_Screenshot-2016-11-02-00.19.56.png?expiry=1613001600000&hmac=Ifp8vvctTw2IK7sBX8x1gkexWALIx53MaoRfrvlJRxQ)  
 This method looks at every example in the entire training set on every step, and is called **batch gradient descent**.  
 该方法在每个步骤的整个训练集中查看每个示例，称**为批量梯度下降**。
 
