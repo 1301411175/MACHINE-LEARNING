@@ -34,5 +34,10 @@ iteration would yield to a wrong implementation.
 This method looks at every example in the entire training set on every step, and is called **batch gradient descent**.  
 该方法在每个步骤的整个训练集中查看每个示例，称**为批量梯度下降**。
 
+---
+## 补充
+#### Occam's razor  奥卡姆剃刀
+> 若有多个假设与观察一致，则选择最简单的那个
+
 
 
