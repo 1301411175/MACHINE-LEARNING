@@ -27,7 +27,7 @@ x_i:=\frac{x_i-\mu_i}{s_i}
 Where $\mu_i$ is the **average** of all the values for feature (i) and $s_i$ is the range of values (max - min), or $s_i$ is the standard deviation.Note that dividing by the range, or dividing by the standard deviation, give different results. The quizzes in this course use range - the programming exercises use standard deviation.
 
 我们可以通过让每个输入值在大致相同的范围内来加速梯度下降。这是因为θ会在小范围内快速下降，而在大范围内缓慢下降，因此当变量非常不均匀时，θ会低效率地振荡至最佳。 
-有两种技术可以帮助实现这一点，即特征缩放和均值归一化。特征缩放包括用输入值除以输入变量的范围(即最大值减去最小值)，从而得到一个新的范围为1。均值标准化包括用输入变量的值减去输入变量的平均值，从而得到输入变量的新平均值为零。为了实现这两种技术，调整你的输入值如下公式所示:
+有两种技术可以帮助实现这一点，即**特征缩放**和**均值归一化**。**特征缩放**包括用输入值除以输入变量的范围(即最大值减去最小值)，从而得到一个新的范围为1。**均值标准化**包括用输入变量的值减去输入变量的平均值，从而得到输入变量的新平均值为零。为了实现这两种技术，调整你的输入值如下公式所示:
 ```math
 x_i:=\frac{x_i-\mu_i}{s_i}
 ``` 
