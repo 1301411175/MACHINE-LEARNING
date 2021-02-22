@@ -5,8 +5,11 @@ Linear regression with multiple variables is also known as "multivariate linear 
 The gradient descent equation itself is generally the same form; we just have to repeat it for our 'n' features:
 **repeat until convergence**:{
 &emsp;$\theta_0:=\theta_0−\alpha\frac{1}{m}\sum_{i=1}^{m}(h_θ(x^{(i)})−y^{(i)})⋅x^{(i)}_ 0$
+
 &emsp;$\theta_1:=\theta_1−\alpha\frac{1}{m}\sum_{i=1}^{m}(h_θ(x^{(i)})−y^{(i)})⋅x^{(i)}_ 1$
+
 &emsp;$\theta_2:=\theta_2−\alpha\frac{1}{m}\sum_{i=1}^{m}(h_θ(x^{(i)})−y^{(i)})⋅x^{(i)}_ 2$  
+
 &emsp;...   
 }
 **In other words:**
