@@ -63,6 +63,7 @@ Need to choose alpha|No need to choose alpha
 Needs many iterations|No need to iterate
 O($kn^2$) |O$(n^3)$,need to calculate inverse of $X^TX$ 
 Works well when n is large	|Slow if n is very large
+
 With the normal equation, computing the inversion has complexity $\mathcal{O}(n^3)$. So if we have a very large number of features, the normal equation will be slow. In practice, when n exceeds 10,000 it might be a good time to go from a normal solution to an iterative process.
 使用正规方程，计算矩阵逆的复杂度为$\mathcal{O}(n^3)$。因此，如果我们具有大量特征，则正规方程将很慢。实际上，当n超过10,000时，可能是从正规方程转为迭代方式的好时机。
 有人可能想说——**明明还可以继续化简啊！！！**
