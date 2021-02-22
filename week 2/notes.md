@@ -71,7 +71,7 @@ With the normal equation, computing the inversion has complexity $\mathcal{O}(n^
 *回忆一下，解线性方程组时，若因变量过多，则会解出多组解。*
 
 ---
-###Normal Equation Noninvertibility
+### Normal Equation Noninvertibility
 When implementing the normal equation in octave we want to use the 'pinv' function rather than 'inv.' The 'pinv' function will give you a value of $\theta$ even if $X^TX$ is not invertible. 
 If $X^TX$ is **noninvertible**, the common causes might be having :
 
