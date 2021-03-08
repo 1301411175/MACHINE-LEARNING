@@ -5,8 +5,11 @@ Linear regression with multiple variables is also known as "multivariate linear 
 The gradient descent equation itself is generally the same form; we just have to repeat it for our 'n' features:
 **repeat until convergence**:{
 &emsp;$\theta_0:=\theta_0−\alpha\frac{1}{m}\sum_{i=1}^{m}(h_θ(x^{(i)})−y^{(i)})⋅x^{(i)}_ 0$
+
 &emsp;$\theta_1:=\theta_1−\alpha\frac{1}{m}\sum_{i=1}^{m}(h_θ(x^{(i)})−y^{(i)})⋅x^{(i)}_ 1$
+
 &emsp;$\theta_2:=\theta_2−\alpha\frac{1}{m}\sum_{i=1}^{m}(h_θ(x^{(i)})−y^{(i)})⋅x^{(i)}_ 2$  
+
 &emsp;...   
 }
 **In other words:**
@@ -50,6 +53,11 @@ In the "Normal Equation" method, we will minimize J by explicitly taking its der
 &emsp;&emsp;$X^T(y-X\theta)=0$
 &emsp;&emsp;$X^Ty=X^TX\theta$
 &emsp;&emsp;$\theta=(X^TX)^{-1}X^Ty$
+**或**
+&emsp;&emsp;$\theta=argmin(y-X\theta)^T(y-X\theta)$
+&emsp;&emsp;令 $E=(y-X\theta)^T(y-X\theta)$, 对$\theta$求导得到，
+&emsp;&emsp;$\frac{\partial E}{\partial \theta}=2X^T(X\theta-y)$
+&emsp;&emsp;$\theta=(X^TX)^{-1}X^Ty$
 There is no need to do feature scaling with the normal equation.
 无需对正规方程进行特征缩放。
 Gradient Descent | Normal Equation
@@ -58,13 +66,16 @@ Need to choose alpha|No need to choose alpha
 Needs many iterations|No need to iterate
 O($kn^2$) |O$(n^3)$,need to calculate inverse of $X^TX$ 
 Works well when n is large	|Slow if n is very large
+
 With the normal equation, computing the inversion has complexity $\mathcal{O}(n^3)$. So if we have a very large number of features, the normal equation will be slow. In practice, when n exceeds 10,000 it might be a good time to go from a normal solution to an iterative process.
 使用正规方程，计算矩阵逆的复杂度为$\mathcal{O}(n^3)$。因此，如果我们具有大量特征，则正规方程将很慢。实际上，当n超过10,000时，可能是从正规方程转为迭代方式的好时机。
 有人可能想说——**明明还可以继续化简啊！！！**
 但实际的情况中，我们不能保证矩阵A总是方阵（square），但是$A^TA$总是可以保证是方阵。因为只有方阵才有逆矩阵，所以我们只能保证有$(A^TA)^{-1}$，而不能保证有$A^{-1}$。
+然而，在现实生活中，$X^TX$往往不是满秩矩阵，例如在许多任务中我们会遇到大量的变量，其数目甚至超过样例数，导致$X$的列数多于行数，$X^TX$显然不满秩，此时可以解出多个$\theta$,选择哪一个解作为输出，将由学习算法的归纳偏好决定，常见的做法是引入**正则化(regularization)**.
+*回忆一下，解线性方程组时，若因变量过多，则会解出多组解。*
 
 ---
-###Normal Equation Noninvertibility
+### Normal Equation Noninvertibility
 When implementing the normal equation in octave we want to use the 'pinv' function rather than 'inv.' The 'pinv' function will give you a value of $\theta$ even if $X^TX$ is not invertible. 
 If $X^TX$ is **noninvertible**, the common causes might be having :
 
