@@ -130,11 +130,20 @@ end
 ```
 Then we can use octave's **"fminunc()"** optimization algorithm along with the **"optimset()"** function that creates an object containing the options we want to send to "fminunc()". 
 ```matlab
-options = optimset('GradObj', 'on', 'MaxIter', 100);
+options = optimset('GradObj', 'on', 'MaxIter', 400);
 initialTheta = zeros(2,1);
     [optTheta, functionVal, exitFlag] = fminunc(@costFunction, initialTheta, options);
 ```
+
+>Specifically, we set the GradObj option to on, which tells fminunc that our
+function returns both the cost and the gradient. This allows fminunc to
+use the gradient when minimizing the function. Furthermore, we set the
+MaxIter option to 400, so that fminunc will run for at most 400 steps before
+it terminates.
+
 We give to the function "fminunc()" our cost function, our initial vector of theta values, and the "options" object that we created beforehand.
+
+
 
 ---
 
