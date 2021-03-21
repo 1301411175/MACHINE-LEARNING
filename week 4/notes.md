@@ -45,4 +45,21 @@ Notice that in this **last step**, between layer j and layer j+1, we are doing e
 
 ---
 
-### 
+### Examples and Intuitions
+![OR_function](https://img.imgdb.cn/item/604b4d815aedab222cc91d8f.jpg)
+Where g(z) is the following:
+![sigmoid_function](https://img.imgdb.cn/item/604b4db75aedab222cc9390c.jpg)
+![XNOR_function](https://img.imgdb.cn/item/604b52255aedab222ccba802.jpg)
+
+---
+
+### Multiclass Classification
+To classify data into multiple classes, we let our hypothesis function return a vector of values.Say we wanted to classify our data into one of four categories. We will use the following example to see how this classification is done. This algorithm takes as input an image and classifies it accordingly: 
+![image](https://img.imgdb.cn/item/604b544d5aedab222cccf356.jpg)
+We can define our set of resulting classes as y:
+> $x=\left[\begin{matrix} 1 \\ 0 \\ 0 \\ 0 \end{matrix}\right], \left[\begin{matrix} 0 \\ 1 \\ 0 \\ 0 \end{matrix}\right], \left[\begin{matrix} 0 \\ 0 \\ 1 \\ 0 \end{matrix}\right], \left[\begin{matrix} 0 \\ 0 \\ 0 \\ 1 \end{matrix}\right]$
+
+Each $y^{(i)}$ represents a different image corresponding to either a car, pedestrian, truck, or motorcycle.
+> $h_\Theta(x)=[0010]$
+
+In which case our resulting class is the third one down, or $h_\Theta(x)_3$h, which represents the motorcycle. 
